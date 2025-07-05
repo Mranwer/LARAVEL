@@ -9,10 +9,20 @@
     <title>Document</title>
 </head>
 <body>
+
+      {{-- @if($errors->any())
+    @foreach ($errors->all() as $xyz)
+    <div style="color: red">
+        {{$xyz}}
+    </div>
+    @endforeach
+    @endif --}}
     <form action="login-form" class="row g-3 needs-validation" novalidate method="POST">
         @csrf
   <div class="col-md-4">
     <label for="validationCustom01" class="form-label">First name</label>
+    <br>
+    <span style="color: red">@error('name'){{$message}}@enderror</span>
     <input type="text" class="form-control" name="name" id="validationCustom01" value="" required>
     <div class="valid-feedback">
       Looks good!
@@ -20,6 +30,8 @@
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Last name</label>
+    <br>
+    <span style="color: red">@error('lastname'){{$message}}@enderror</span>
     <input type="text" class="form-control"name="lastname" id="validationCustom02" value="" required>
     <div class="valid-feedback">
       Looks good!
@@ -27,6 +39,8 @@
   </div>
   <div class="col-md-4">
     <label for="validationCustomUsername" class="form-label">Username</label>
+    <br>
+    <span style="color: red">@error('username'){{$message}}@enderror</span>
     <div class="input-group has-validation">
       <span class="input-group-text" id="inputGroupPrepend">@</span>
       <input type="text" class="form-control" name="username" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>

@@ -57,6 +57,12 @@ class Usercontroller extends Controller
 
     }
     function getLogininfo(Request $req){
+         $req->validate([
+               'name'=>'required | min:3 | max:20',
+               'lastname'=>'required | max:20',
+               'username'=>'required | email',
+
+            ]);
         echo $req->name."<br><br>";
         echo $req->lastname."<br><br>";
         echo $req->username."<br><br>";
