@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+      .input-error{
+        color: red;
+        border:1px solid red;
+      }
+    </style>
 </head>
 <body>
 
@@ -23,7 +29,7 @@
     <label for="validationCustom01" class="form-label">First name</label>
     <br>
     <span style="color: red">@error('name'){{$message}}@enderror</span>
-    <input type="text" class="form-control" name="name" id="validationCustom01" value="" required>
+    <input type="text" class="{{($errors->first('name')? 'input-error':'')}} form-control" name="name" id="validationCustom01" value="{{old('name')}}" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -32,7 +38,7 @@
     <label for="validationCustom02" class="form-label">Last name</label>
     <br>
     <span style="color: red">@error('lastname'){{$message}}@enderror</span>
-    <input type="text" class="form-control"name="lastname" id="validationCustom02" value="" required>
+    <input type="text" class="{{($errors->first('lastname')? 'input-error':'')}} form-control"name="lastname" id="validationCustom02" value="{{old('lastname')}}" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -43,7 +49,7 @@
     <span style="color: red">@error('username'){{$message}}@enderror</span>
     <div class="input-group has-validation">
       <span class="input-group-text" id="inputGroupPrepend">@</span>
-      <input type="text" class="form-control" name="username" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+      <input type="text" class="{{($errors->first('username')? 'input-error':'')}} form-control" name="username" value="{{old('username')}}" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
       <div class="invalid-feedback">
         Please choose a username.
       </div>
