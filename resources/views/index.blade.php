@@ -14,7 +14,7 @@
     <x-message-banner msg="user Signup Successfully"/> --}}
     @include("pages.blog");
     <h1>this is our index page</h1>
-    <a href="welcome">welcome</a>
+    {{-- <a href="{{route('hm')}}">welcome</a> --}}
 
     <style>
         .message{

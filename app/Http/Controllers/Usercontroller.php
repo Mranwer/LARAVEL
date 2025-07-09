@@ -44,27 +44,49 @@ class Usercontroller extends Controller
     //     echo "this is user form";
     // }
 
-        function addUser(Request $request){
-            $request->validate([
+     
+    function getLogininfo(Request $req){
+         $req->validate([
                'name'=>'required | min:3 | max:10',
                'lastname'=>'required | max:20',
                'username'=>'required | email',
 
-            ]);
-        echo $request->name."<br><br>";
-        echo $request->lastname."<br><br>";
-        echo $request->username."<br><br>";
-
-    }
-    function getLogininfo(Request $req){
-         $req->validate([
-               'name'=>'required | min:3 | max:20',
-               'lastname'=>'required | max:20',
-               'username'=>'required | email',
+            ],[
+                'name.required'=>'first name cant be empty',
+                'name.min'=>'first name have to be atleast 3 character',
+                'username.email'=>'the username have must be with @'
 
             ]);
         echo $req->name."<br><br>";
         echo $req->lastname."<br><br>";
         echo $req->username."<br><br>";
+    }
+
+
+
+    function getUserInfo(Request $info){
+       $info->validate([
+          'fname'=>'required',
+          'lname'=>'required',
+          'uname'=>'required'
+       ]);
+
+
+        echo "name: " .$info->fname."<br><br>";
+        echo "Lastname: " .$info->lname."<br><br>";
+        echo "Username: " .$info->uname."<br><br>";       
+    }
+
+
+    function show(){
+        return "this is our show page";
+    }
+
+    function add(){
+        return "this is our add page";
+    }
+
+    function delete(){
+        return "this is our delete page";
     }
 }
