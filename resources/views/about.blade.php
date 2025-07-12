@@ -9,7 +9,7 @@
 <body>
    <x-message-banner msg="data transfer successfully"/>
     <h1>
-        {{$name}}
+        {{-- {{$name}} --}}
     </h1>
     <h1>this is about page</h1>
 

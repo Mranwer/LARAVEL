@@ -3,8 +3,7 @@
 <x-message-banner msg="User signup SuccessFully"/>
 
 <h1>hello this our service</h1>
-<h2>{{$name}}</h2>
-<p><?php echo $name ?></p>
+{{-- <h2>{{$name}}</h2> --}}
 
 
 <style>

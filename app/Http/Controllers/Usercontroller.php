@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 class Usercontroller extends Controller
@@ -66,9 +67,14 @@ class Usercontroller extends Controller
 
     function getUserInfo(Request $info){
        $info->validate([
-          'fname'=>'required',
-          'lname'=>'required',
-          'uname'=>'required'
+          'fname'=>'required | min:3 | max:10',
+          'lname'=>'required | max:20',
+          'uname'=>'required | email'
+       ],[
+           'fname.required'=>'the first name field can not be empty',
+           'fname.min'=>'पहला नाम कम से कम 3 अक्षरों से अधिक होना चाहिए।',
+           'lname.required'=>'the first name field can not be empty',
+           'uname.required'=>'the first name field can not be empty'
        ]);
 
 
@@ -79,14 +85,22 @@ class Usercontroller extends Controller
 
 
     function show(){
-        return "this is our show page";
+        return 'this is our show page';
     }
-
     function add(){
-        return "this is our add page";
+        return 'this is our add page';
+    }
+    function delete(){
+        return 'this is our delete page';
     }
 
-    function delete(){
-        return "this is our delete page";
-    }
+
+    // function getData(){
+    //     return DB::select('select * from first');
+    // }
+
+    // function getData(){
+    //     $users = DB::select('select * from first');
+    //     return view('users',['user'=>$users]);
+    // }
 }

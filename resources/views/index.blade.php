@@ -7,14 +7,18 @@
     <title>Document</title>
 </head>
 <body>
+
     @include('pack.header')
     <x-message-banner msg="user Login SuccessFully"/>
     {{-- <x-messageproxy msg="user Login SuccessFully"/> --}}
     {{-- <x-message-banner msg="user Login SuccessFully"/>
     <x-message-banner msg="user Signup Successfully"/> --}}
-    @include("pages.blog");
+    @include("pages.blog")
     <h1>this is our index page</h1>
-    {{-- <a href="{{route('hm')}}">welcome</a> --}}
+    <a href="{{route('hm')}}">welcome</a>
+
+
+
 
     <style>
         .message{

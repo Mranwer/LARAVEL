@@ -15,10 +15,10 @@
     </style>
 </head>
 <body>
-  {{-- <h1>{{URL::current()}}</h1> --}}
+  <h1>{{URL::current()}}</h1>
  
 
-  {{-- <h1>{{URL::full()}}</h1> --}}
+  <h1>{{URL::full()}}</h1>
 
       {{-- @if($errors->any())
     @foreach ($errors->all() as $xyz)
