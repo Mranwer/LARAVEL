@@ -18,10 +18,8 @@ return Application::configure(basePath: dirname(__DIR__))
         // globally
 
         
-        // $middleware->appendToGroup('check',[
-        //     AgeCheck::class,
-            // CountryCheck::class
-            // http://127.0.0.1:8000/about?age=20/hello&country=india
+    //     $middleware->appendToGroup('check',[
+    //         AgeCheck::class
     // ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

@@ -18,7 +18,7 @@ class AgeCheck
         // echo "<pre>";
         // print_r($request->age);
         // http://127.0.0.1:8000/?age=30
-        if($request->age<20){
+        if($request->age<18){
             die('you cant use this website because you are under age');
         }
         return $next($request);

@@ -71,40 +71,34 @@ Route::controller(Usercontroller::class)->group(function(){
     Route::get('delete','delete');
 });
 
-
-// Route::view('about','about');
-
 // Route::view('about','about')->middleware('check');
 
-    // Route::view('about','about');
-    // Route::view('contact','contact');
-    // Route::view('blog','pages.blog');
-    // Route::view('service','service');
-
-Route::middleware('check')->group(function(){
-    Route::view('about','about');
-    Route::view('contact','contact');
-    Route::view('blog','pages.blog');
-    Route::view('service','service');
-});
+// Route::middleware('check')->group(function(){
+//     Route::view('about','about');
+//     Route::view('contact','contact');
+//     Route::view('blog','pages.blog');
+//     Route::view('service','service');
+// });
+    
 
 // middleware apply directly on route
 
 // single middleware
+Route::view('service','service')->middleware(AgeCheck::class,CountryCheck::class);
 // Route::view('about','about')->middleware(CountryCheck::class);
 
 // multiple Middleware
 // Route::view('about','about')->middleware(AgeCheck::class,CountryCheck::class);
 
-Route::view('about','about')->middleware([AgeCheck::class,CountryCheck::class]);
+// Route::view('about','about')->middleware([AgeCheck::class,CountryCheck::class]);
 
 
 // db se data lane ke liye route
 
-// Route::get('users-data',[Usercontroller::class,'getData']);
+Route::get('users-data',[Usercontroller::class,'getData']);
 
 
-
+Route::get('students',[Usercontroller::class,'studentData']);
 
 
 

@@ -99,8 +99,21 @@ class Usercontroller extends Controller
     //     return DB::select('select * from first');
     // }
 
-    // function getData(){
-    //     $users = DB::select('select * from first');
-    //     return view('users',['user'=>$users]);
+
+    //  databse connect with migrate
+    // function studentData(){
+    //     $student = DB::select('select * from student_data');
+
+    //     return view('student',['users'=>$student]);
     // }
+
+    // database connect without migrate
+
+      function studentData(){
+        $student = DB::select('select * from application');
+
+        return view('student',['users'=>$student]);
+    }
+
+
 }
