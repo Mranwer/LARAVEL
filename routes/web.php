@@ -100,5 +100,7 @@ Route::get('users-data',[Usercontroller::class,'getData']);
 
 Route::get('students',[Usercontroller::class,'studentData']);
 
+Route::get('perosnal',[Usercontroller::class,'getUsersData']);
+
 
 

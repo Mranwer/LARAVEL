@@ -101,6 +101,14 @@ class Usercontroller extends Controller
 
 
     //  databse connect with migrate
+
+        function getUsersData(){
+            // $perosnal = DB::select('select * from first');
+            // return view('perosnal',['perosnals'=>$perosnal]);
+            $student = \App\Models\Student::all();
+            return view('perosnal',['perosnals'=>$student]);
+        }
+
     // function studentData(){
     //     $student = DB::select('select * from student_data');
 
@@ -109,11 +117,11 @@ class Usercontroller extends Controller
 
     // database connect without migrate
 
-      function studentData(){
-        $student = DB::select('select * from application');
+    // //   function studentData(){
+    // //     $student = DB::select('select * from application');
 
-        return view('student',['users'=>$student]);
-    }
+    // //     return view('student',['users'=>$student]);
+    // }
 
 
 }
