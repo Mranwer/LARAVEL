@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Http;
 
 class Usercontroller extends Controller
 {
@@ -122,6 +123,12 @@ class Usercontroller extends Controller
 
     // //     return view('student',['users'=>$student]);
     // }
+
+    function getFakeData(){
+        $response =Http::get('https://jsonplaceholder.typicode.com/users/1');
+        $response = $response->body();
+        return view('fake',['data'=>json_decode($response)]);
+    }
 
 
 }

@@ -102,5 +102,7 @@ Route::get('students',[Usercontroller::class,'studentData']);
 
 Route::get('perosnal',[Usercontroller::class,'getUsersData']);
 
+Route::get('fake',[Usercontroller::class,'getFakeData']);
+
 
 
